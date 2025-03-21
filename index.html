@@ -3,88 +3,223 @@
 <head>
     <title>Macro Reading Group</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
-        }
-        .header {
-            background-color: #2c2c2c;
-            color: white;
-            padding: 20px;
+        /* Main title styling */
+        .main-title {
             text-align: center;
-        }
-        .container {
+            padding: 40px 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .section {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        table {
+            /* Center horizontally only */
+            margin: 20px auto;
             width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
+            /* Remove vertical centering */
+            position: static;
+            transform: none;
         }
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+
+        .main-title h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            font-weight: 600;
         }
-        th {
-            background-color: #f8f8f8;
+
+        /* Remove the content wrapper padding */
+        .content-wrapper {
+            padding-top: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Unified base styling for all sections */
+        .section {
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        /* Header styling */
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Table of Contents styling */
+        .toc-section {
+            position: sticky;
+            top: 20px;
+            float: right;
+            width: 250px;
+            margin-left: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .toc-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-section li {
+            margin: 10px 0;
+        }
+
+        .toc-section a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .toc-section a:hover {
+            color: #2980b9;
+        }
+
+        /* Schedule grid styling */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: auto 120px 1fr 200px;
+            gap: 20px;
+        }
+
+        .grid-header {
+            font-weight: 600;
+            padding: 15px;
+            background: #f8f9fa;
+            color: #2c3e50;
+        }
+
+        .grid-item {
+            padding: 20px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .paper-title {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .paper-title:hover {
+            color: #2980b9;
+        }
+
+        .presenter {
+            color: #7f8c8d;
+        }
+
+        /* Location section styling */
+        .location-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .location-icon {
+            font-size: 1.2em;
+            color: #e74c3c;
+        }
+
+        /* Contact section styling */
+        .contact-section a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-section a:hover {
+            color: #2980b9;
         }
     </style>
 </head>
 <body>
-    <div class="header">
+
+    <!-- Main Title -->
+    <div id="MainTitle" class="main-title">
         <h1>Macro Reading Group</h1>
-        <p>TU Dortmund University</p>
+    </div>
+    
+    <!-- Table of Contents -->
+    <div id="TableOfContents" class="toc-section">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#Description">Description</a></li>
+            <li><a href="#Schedule">Schedule for Sommer Semester 2025</a></li>
+            <li><a href="#Location">Location</a></li>
+            <li><a href="#Contacts">Contact</a></li>
+        </ul>
     </div>
 
-    <div class="container">
-        <div class="section">
-            <h2>Description</h2>
-            <p>Welcome to the website of the Macro reading group! The objective of the reading group is to create a 
-            place of exchange for all macroeconomics enthusiasts. We intend to read papers that appeal to the average 
-            macro practitioner.</p>
-            
-            <p>Before each semester we kindly ask new participants to suggest papers for the group. Regular attendance 
-            is not required but highly encouraged.</p>
-        </div>
+    <!-- Description Section -->
+    <div id="Description" class="section">
+        <h2>Description</h2>
+        <p>Welcome to the website of the Macro reading group! This website aims at providing an overview of necessary infos for our Macro
+            reading group events. </p>
+    </div>
 
-        <div class="section">
-            <h2>Schedule for Winter Semester 24/25</h2>
-            <table>
-                <tr>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Paper</th>
-                    <th>Presenter</th>
-                </tr>
-                <tr>
-                    <td>TBA</td>
-                    <td>TBA</td>
-                    <td>TBA</td>
-                    <td>TBA</td>
-                </tr>
-            </table>
-        </div>
+    <!-- Schedule Section -->
+    <div id="Schedule" class="section">
+        <h2>Schedule for Sommer Semester 2025</h2>
+        <div class="schedule-grid">
+            <div class="grid-header">Date</div>
+            <div class="grid-header">Time</div>
+            <div class="grid-header">Paper</div>
+            <div class="grid-header">Presenter</div>
 
-        <div class="section">
-            <h2>Contact</h2>
+            <div class="grid-item">April 9, 2025</div>
+            <div class="grid-item">Wed. 16:00</div>
+            <div class="grid-item">
+                <a href="https://www.aeaweb.org/articles?id=10.1257/aer.20160696" class="paper-title">The Race between Man and Machine: Implications of Technology for Growth, Factor Shares, and Employment</a>
+            </div>
+            <div class="grid-item presenter">Stefan Kotz</div>
+
+            <div class="grid-item">May 22, 2025</div>
+            <div class="grid-item">Thu. 16:00</div>
+            <div class="grid-item">
+                <a href="https://benjaminmoll.com/wp-content/uploads/2019/07/HANK.pdf" class="paper-title">Monetary Policy according to HANK (KMV 2018)</a>
+            </div>
+            <div class="grid-item presenter">Emily Chunxiao An</div>
+
+            <div class="grid-item">Jun 12, 2025</div>
+            <div class="grid-item">Thu. 16:00</div>
+            <div class="grid-item">
+                <a href="https://www.sciencedirect.com/science/article/pii/S0304387818300403?casa_token=g-BOnJ0E_WEAAAAA:J4vrEUyaJtaPwNIe4gOGnxWSm1HPRlU4UGiBEgMCmEOpFk7aPy99YmIeWQDXS8_0waJt39DvkkgK" class="paper-title">Remittances and the informal economy</a>
+            </div>
+            <div class="grid-item presenter">Erika Ehberger</div>
+        </div>
+    </div>
+
+    <!-- Location Section -->
+    <div id="Location" class="section">
+        <h2>Location</h2>
+        <div class="location-section">
+            <span class="location-icon">📍</span>
+            <p>RWI, Werk 2</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="Contacts" class="section">
+        <h2>Contact</h2>
+        <div class="contact-section">
             <p>For any questions, please contact:</p>
-            <p>Email: your.email@tu-dortmund.de</p>
-            <p>Location: TU Dortmund, Room XXX</p>
+            <p><a href="mailto:chunxiao.an@tu-dortmund.de">chunxiao.an@tu-dortmund.de</a></p>
+            <p><a href="mailto:stefan.kotz@rwi-essen.de">stefan.kotz@rwi-essen.de</a></p>
         </div>
     </div>
+
 </body>
 </html>
