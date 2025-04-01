@@ -2,70 +2,82 @@
 <html>
 <head>
     <title>Macro Reading Group</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Root font size */
+        html {
+            font-size: 16px;
+        }
+
+        /* Base body styling */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
+        }
+
         /* Main title styling */
         .main-title {
             text-align: center;
-            padding: 40px 0;
+            padding: 2.5rem 0;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             max-width: 1200px;
-            /* Center horizontally only */
-            margin: 20px auto;
+            margin: 1.25rem auto;
             width: 100%;
-            /* Remove vertical centering */
             position: static;
             transform: none;
         }
 
         .main-title h1 {
             color: #2c3e50;
-            font-size: 2.5em;
+            font-size: 2.5rem;
             font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             font-weight: 600;
         }
 
-        /* Remove the content wrapper padding */
+        /* Content wrapper */
         .content-wrapper {
             padding-top: 0;
         }
 
-        body {
-            margin: 0;
-            padding: 20px;
-        }
-
         /* Unified base styling for all sections */
         .section {
-            margin: 40px auto;
-            padding: 30px;
+            margin: 2.5rem auto;
+            padding: 1.875rem;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             max-width: 1200px;
             font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
         }
 
         /* Header styling */
         .section h2 {
             color: #2c3e50;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
             font-weight: 600;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.8rem;
         }
 
         /* Table of Contents styling */
         .toc-section {
             position: sticky;
-            top: 20px;
+            top: 1.25rem;
             float: right;
             width: 250px;
-            margin-left: 30px;
+            margin-left: 1.875rem;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 20px;
+            padding: 1.25rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
         }
 
         .toc-section ul {
@@ -75,13 +87,14 @@
         }
 
         .toc-section li {
-            margin: 10px 0;
+            margin: 0.625rem 0;
         }
 
         .toc-section a {
             color: #3498db;
             text-decoration: none;
             transition: color 0.2s;
+            font-size: 1rem;
         }
 
         .toc-section a:hover {
@@ -92,25 +105,33 @@
         .schedule-grid {
             display: grid;
             grid-template-columns: auto 120px 1fr 200px;
-            gap: 20px;
+            gap: 1.25rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
         }
 
         .grid-header {
             font-weight: 600;
-            padding: 15px;
+            padding: 0.9375rem;
             background: #f8f9fa;
             color: #2c3e50;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
         }
 
         .grid-item {
-            padding: 20px 15px;
+            padding: 1.25rem 0.9375rem;
             border-bottom: 1px solid #eee;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
         }
 
         .paper-title {
             color: #3498db;
             text-decoration: none;
             transition: color 0.2s;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
         }
 
         .paper-title:hover {
@@ -119,29 +140,75 @@
 
         .presenter {
             color: #7f8c8d;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
         }
 
         /* Location section styling */
         .location-section {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.625rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
+        }
+
+        .location-section p {
+            font-size: 1rem;
+            margin: 0;
         }
 
         .location-icon {
-            font-size: 1.2em;
+            font-size: 1.2rem;
             color: #e74c3c;
         }
 
         /* Contact section styling */
+        .contact-section {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
+        }
+
+        .contact-section p {
+            font-size: 1rem;
+        }
+
         .contact-section a {
             color: #3498db;
             text-decoration: none;
             transition: color 0.2s;
+            font-size: 1rem;
         }
 
         .contact-section a:hover {
             color: #2980b9;
+        }
+
+        /* Paragraph styling */
+        p {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 0 1em 0;
+            font-size: 1rem;
+        }
+
+        /* Add responsive styling for mobile devices */
+        @media screen and (max-width: 768px) {
+            .schedule-grid {
+                grid-template-columns: 1fr;
+                gap: 0.625rem;
+            }
+
+            .toc-section {
+                float: none;
+                width: auto;
+                margin-left: 0;
+                margin-bottom: 1.25rem;
+            }
+
+            .section {
+                padding: 1.25rem;
+            }
         }
     </style>
 </head>
@@ -199,6 +266,13 @@
                 <a href="https://www.sciencedirect.com/science/article/pii/S0304387818300403?casa_token=g-BOnJ0E_WEAAAAA:J4vrEUyaJtaPwNIe4gOGnxWSm1HPRlU4UGiBEgMCmEOpFk7aPy99YmIeWQDXS8_0waJt39DvkkgK" class="paper-title">Remittances and the informal economy</a>
             </div>
             <div class="grid-item presenter">Erika Ehberger</div>
+
+            <div class="grid-item">Jul 3, 2025</div>
+            <div class="grid-item">Thu. 16:00</div>
+            <div class="grid-item">
+                <a href=" https://onlinelibrary.wiley.com/doi/full/10.3982/ECTA18627 " class="paper-title">Optimal monetary policy in production networks</a>
+            </div>
+            <div class="grid-item presenter">Clara Krause</div>
         </div>
     </div>
 
