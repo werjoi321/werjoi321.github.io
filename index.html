@@ -250,7 +250,7 @@
 
     <!-- Main Title -->
     <div id="MainTitle" class="main-title">
-        <h1>Macro Reading Group</h1>
+        <h1>Ruhr Macro Reading Group</h1>
     </div>
     
     <!-- Table of Contents -->
@@ -258,8 +258,8 @@
         <h2>Table of Contents</h2>
         <ul>
             <li><a href="#Description">Description</a></li>
-            <li><a href="#ScheduleWS2526">Schedule for WS 2526</a></li>
-            <li><a href="#" onclick="toggleSchedule('ScheduleSS2025'); return false;">Schedule for SS 2025</a></li>
+            <li><a href="#ScheduleSS2025">Schedule for SS 2025</a></li>
+            <li><a href="#" onclick="toggleSchedule('ScheduleWS2526'); return false;">Schedule for WS 2526</a></li>
             <li><a href="#Location">Location</a></li>
             <li><a href="#Contacts">Contact</a></li>
         </ul>
@@ -272,28 +272,8 @@
             reading group events. </p>
     </div>
 
-    <!-- Schedule Section WS 2526 (Now on top) -->
-    <div id="ScheduleWS2526" class="section">
-        <h2>Schedule for WS 2526</h2>
-        <div class="schedule-grid">
-            <div class="grid-header">Date</div>
-            <div class="grid-header">Time</div>
-            <div class="grid-header">Paper</div>
-            <div class="grid-header">Presenter</div>
-
-            <!-- Add your WS 2526 schedule entries here -->
-            <div class="grid-item">TBA</div>
-            <div class="grid-item">TBA</div>
-            <div class="grid-item">
-                <span class="paper-title">Schedule to be announced</span>
-            </div>
-            <div class="grid-item presenter">TBA</div>
-
-        </div>
-    </div>
-
-    <!-- Schedule Section SS 2025 (Hidden by default) -->
-    <div id="ScheduleSS2025" class="collapsible-section">
+    <!-- Schedule Section SS 2025 (Now visible by default) -->
+    <div id="ScheduleSS2025" class="section">
         <h2>Schedule for SS 2025</h2>
         <div class="schedule-grid">
             <div class="grid-header">Date</div>
@@ -344,6 +324,26 @@
                 </div>
             </div>
             <div class="grid-item presenter">Raphael Dealet</div>
+
+        </div>
+    </div>
+
+    <!-- Schedule Section WS 2526 (Now hidden by default) -->
+    <div id="ScheduleWS2526" class="collapsible-section">
+        <h2>Schedule for WS 2526</h2>
+        <div class="schedule-grid">
+            <div class="grid-header">Date</div>
+            <div class="grid-header">Time</div>
+            <div class="grid-header">Paper</div>
+            <div class="grid-header">Presenter</div>
+
+            <!-- Add your WS 2526 schedule entries here -->
+            <div class="grid-item">TBA</div>
+            <div class="grid-item">TBA</div>
+            <div class="grid-item">
+                <span class="paper-title">Schedule to be announced</span>
+            </div>
+            <div class="grid-item presenter">TBA</div>
 
         </div>
     </div>
