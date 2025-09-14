@@ -258,8 +258,8 @@
         <h2>Table of Contents</h2>
         <ul>
             <li><a href="#Description">Description</a></li>
-            <li><a href="#ScheduleSS2025">Schedule for SS 2025</a></li>
-            <li><a href="#" onclick="toggleSchedule('ScheduleWS2526'); return false;">Schedule for WS 2526</a></li>
+            <li><a href="#" onclick="showSchedule('ScheduleSS2025'); return false;">Schedule for SS 2025</a></li>
+            <li><a href="#" onclick="showSchedule('ScheduleWS2526'); return false;">Schedule for WS 2526</a></li>
             <li><a href="#Location">Location</a></li>
             <li><a href="#Contacts">Contact</a></li>
         </ul>
@@ -272,7 +272,7 @@
             reading group events. </p>
     </div>
 
-    <!-- Schedule Section SS 2025 (Now visible by default) -->
+    <!-- Schedule Section SS 2025 (Visible by default) -->
     <div id="ScheduleSS2025" class="section">
         <h2>Schedule for SS 2025</h2>
         <div class="schedule-grid">
@@ -328,7 +328,7 @@
         </div>
     </div>
 
-    <!-- Schedule Section WS 2526 (Now hidden by default) -->
+    <!-- Schedule Section WS 2526 (Hidden by default) -->
     <div id="ScheduleWS2526" class="collapsible-section">
         <h2>Schedule for WS 2526</h2>
         <div class="schedule-grid">
@@ -368,12 +368,16 @@
     </div>
 
     <script>
-        function toggleSchedule(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section.classList.contains('show')) {
-                section.classList.remove('show');
-            } else {
-                section.classList.add('show');
+        function showSchedule(sectionId) {
+            // Hide both schedules first
+            document.getElementById('ScheduleSS2025').style.display = 'none';
+            document.getElementById('ScheduleWS2526').classList.remove('show');
+            
+            // Show the selected schedule
+            if (sectionId === 'ScheduleSS2025') {
+                document.getElementById('ScheduleSS2025').style.display = 'block';
+            } else if (sectionId === 'ScheduleWS2526') {
+                document.getElementById('ScheduleWS2526').classList.add('show');
             }
         }
     </script>
