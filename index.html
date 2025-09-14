@@ -197,6 +197,31 @@
             font-size: 1rem;
         }
 
+        /* Collapsible section styling */
+        .collapsible-section {
+            display: none;
+            margin: 2.5rem auto;
+            padding: 1.875rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
+        }
+
+        .collapsible-section.show {
+            display: block;
+        }
+
+        .collapsible-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.8rem;
+        }
+
         /* Add responsive styling for mobile devices */
         @media screen and (max-width: 768px) {
             .schedule-grid {
@@ -214,6 +239,10 @@
             .section {
                 padding: 1.25rem;
             }
+
+            .collapsible-section {
+                padding: 1.25rem;
+            }
         }
     </style>
 </head>
@@ -229,7 +258,8 @@
         <h2>Table of Contents</h2>
         <ul>
             <li><a href="#Description">Description</a></li>
-            <li><a href="#Schedule">Schedule for SS 2025</a></li>
+            <li><a href="#ScheduleWS2526">Schedule for WS 2526</a></li>
+            <li><a href="#" onclick="toggleSchedule('ScheduleSS2025'); return false;">Schedule for SS 2025</a></li>
             <li><a href="#Location">Location</a></li>
             <li><a href="#Contacts">Contact</a></li>
         </ul>
@@ -242,8 +272,28 @@
             reading group events. </p>
     </div>
 
-    <!-- Schedule Section -->
-    <div id="Schedule" class="section">
+    <!-- Schedule Section WS 2526 (Now on top) -->
+    <div id="ScheduleWS2526" class="section">
+        <h2>Schedule for WS 2526</h2>
+        <div class="schedule-grid">
+            <div class="grid-header">Date</div>
+            <div class="grid-header">Time</div>
+            <div class="grid-header">Paper</div>
+            <div class="grid-header">Presenter</div>
+
+            <!-- Add your WS 2526 schedule entries here -->
+            <div class="grid-item">TBA</div>
+            <div class="grid-item">TBA</div>
+            <div class="grid-item">
+                <span class="paper-title">Schedule to be announced</span>
+            </div>
+            <div class="grid-item presenter">TBA</div>
+
+        </div>
+    </div>
+
+    <!-- Schedule Section SS 2025 (Hidden by default) -->
+    <div id="ScheduleSS2025" class="collapsible-section">
         <h2>Schedule for SS 2025</h2>
         <div class="schedule-grid">
             <div class="grid-header">Date</div>
@@ -295,8 +345,6 @@
             </div>
             <div class="grid-item presenter">Raphael Dealet</div>
 
-
-
         </div>
     </div>
 
@@ -318,6 +366,17 @@
             <p><a href="mailto:stefan.kotz@rwi-essen.de">stefan.kotz@rwi-essen.de</a></p>
         </div>
     </div>
+
+    <script>
+        function toggleSchedule(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section.classList.contains('show')) {
+                section.classList.remove('show');
+            } else {
+                section.classList.add('show');
+            }
+        }
+    </script>
 
 </body>
 </html>
